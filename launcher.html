@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home - Google Drive</title>
+  <title>Launcher</title>
   <script>
     window.onload = function() {
-      // Open a new blank window
-      let gameWindow = window.open('about:blank', '_blank', 'fullscreen=yes');
-      
-      // Write the content of game.html into the new window
+      // Open a new blank tab
+      let gameWindow = window.open('about:blank', '_blank');
+
+      // Fetch the index.html (your game)
       fetch('index.html')
         .then(response => response.text())
         .then(data => {
+          // Write the game HTML into the new tab
           gameWindow.document.open();
           gameWindow.document.write(data);
           gameWindow.document.close();
         });
-    }
+    };
   </script>
 </head>
 <body>
