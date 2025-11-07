@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home - Google Drive</title>
+  <script>
+    window.onload = function() {
+      // Open a new blank window
+      let gameWindow = window.open('about:blank', '_blank', 'fullscreen=yes');
+      
+      // Write the content of game.html into the new window
+      fetch('index.html')
+        .then(response => response.text())
+        .then(data => {
+          gameWindow.document.open();
+          gameWindow.document.write(data);
+          gameWindow.document.close();
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Launching game...</h1>
+</body>
+</html>
